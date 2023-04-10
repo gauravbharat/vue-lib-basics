@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <div id="vueApp">{{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}</div>
+    <div id="vueApp" v-cloak>
+      {{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}
+    </div>
 
     <!-- <div id="vueApp2">{{message2}} {{lastName}} {{ calc2}} {{ 9 * 9}}</div> -->
 
