@@ -10,6 +10,7 @@
       <p><a v-bind:href="url" target="_blank">Google</a></p>
       <!-- used shorthand for binding HTML attribute to a dynamic value -->
       <p><a :href="blogUrl" target="_blank">Mimi&apos;s Blog</a></p>
+      <p v-html="raw_url"></p>
       <hr />
 
       <label for="firstName">First Name</label>
