@@ -26,12 +26,17 @@
         Change model property value using v-on directive attached to button
         click event:
       </p>
-      {{age}}
+      {{age}} {{typeof age}}
       <hr />
 
       <label for="firstName">First Name</label>
       <!-- v-model directive, adds two-way data binding and reactivity  -->
-      <input type="text" name="firstName" id="firstName" v-model="firstName" />
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        v-model.lazy.trim="firstName"
+      />
 
       <label for="middleName">Middle Name</label>
       <!-- using key modifier to update the middle name -->
@@ -51,10 +56,15 @@
         @input.prevent="updateLastName('last name event triggered', $event)"
       />
 
+      <label for="age">Age</label>
+      <!-- HTML input element always return a string value when modified even for type=number. Use v-model modifiers for type conversion of the user input.
+           For example, v-model.number -->
+      <input type="number" name="age" id="age" v-model.number="age" />
+
       <!-- v-on directive, listen to HTML events and execute expression or function -->
       <button type="button" v-on:click="increment">Increment</button>
-      <!-- using v-on directive shorthand and system modifier along with click event -->
-      <button type="button" @click.shift="age = age - 1">Decrement</button>
+      <!-- using v-on directive shorthand and system modifier along with click event @click.shift -->
+      <button type="button" @click="age = age - 1">Decrement</button>
     </div>
 
     <!-- <div id="vueApp2">{{message2}} {{lastName}} {{ calc2}} {{ 9 * 9}}</div> -->
