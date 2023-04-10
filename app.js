@@ -6,6 +6,7 @@ const vm = createApp({
     return {
       message: "Hello Vue World!",
       firstName: "John",
+      middleName: "",
       lastName: "Doe",
       calc: 5 + 4,
       url: "https://nextjs-google-clone-8cd664mk9-gauravbharat.vercel.app/",
@@ -17,7 +18,9 @@ const vm = createApp({
   methods: {
     // use regular functions instead of arrow functions due to the Proxy mechanism of Vue for accessing instance data
     fullName() {
-      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+      return `${this.firstName} ${
+        this.middleName
+      } ${this.lastName.toUpperCase()}`;
     },
     increment() {
       this.age++;
@@ -25,6 +28,9 @@ const vm = createApp({
     updateLastName(msg, event) {
       console.log(msg);
       this.lastName = event.target.value;
+    },
+    updateMiddleName(event) {
+      this.middleName = event.target.value;
     },
   },
 }).mount("#vueApp");
