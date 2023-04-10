@@ -11,12 +11,19 @@ const vm = createApp({
       url: "https://nextjs-google-clone-8cd664mk9-gauravbharat.vercel.app/",
       blogUrl: "https://nextjs-blog-gauravbharat.vercel.app/",
       raw_url: `<a href="https://nextjs-imdb-clone-git-main-gauravbharat.vercel.app/" target="_blank">Movie DB</a>`,
+      age: "43",
     };
   },
   methods: {
     // use regular functions instead of arrow functions due to the Proxy mechanism of Vue for accessing instance data
     fullName() {
       return `${this.firstName} ${this.lastName.toUpperCase()}`;
+    },
+    increment() {
+      this.age++;
+    },
+    updateLastName(event) {
+      this.lastName = event.target.value;
     },
   },
 }).mount("#vueApp");

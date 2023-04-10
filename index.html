@@ -5,19 +5,45 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
+    <!-- v-cloak directive waits for Vue application to mount itself into document. i.e. remains on the element until the associated Vue instance finishes compilation or is mounted. -->
     <div id="vueApp" v-cloak>
       <p>{{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}</p>
-      <p><a v-bind:href="url" target="_blank">Google</a></p>
+      <!-- v-bind directive, binds HTML attribute in view (html document) to a dynamic value in model (javascript). -->
+      <p><a v-bind:href="url" target="_blank">Google - using v-bind</a></p>
       <!-- used shorthand for binding HTML attribute to a dynamic value -->
-      <p><a :href="blogUrl" target="_blank">Mimi&apos;s Blog</a></p>
+      <p>
+        <a :href="blogUrl" target="_blank"
+          >Mimi&apos;s Blog using v-bind shorthand</a
+        >
+      </p>
+      <!-- v-html directive, output raw HTML onto the document -->
+      <p>Output raw HTML using v-html as below:</p>
       <p v-html="raw_url"></p>
+
+      <p>
+        Change model property value using v-on directive attached to button
+        click event:
+      </p>
+      {{age}}
       <hr />
 
       <label for="firstName">First Name</label>
+      <!-- v-model directive, adds two-way data binding and reactivity  -->
       <input type="text" name="firstName" id="firstName" v-model="firstName" />
 
       <label for="lastName">Last Name</label>
-      <input type="text" name="lastName" id="lastName" v-model="lastName" />
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        :value="lastName"
+        @input="updateLastName"
+      />
+
+      <!-- v-on directive, listen to HTML events and execute expression or function -->
+      <button type="button" v-on:click="increment">Increment</button>
+      <!-- using v-on directive shorthand -->
+      <button type="button" @click="age = age - 1">Decrement</button>
     </div>
 
     <!-- <div id="vueApp2">{{message2}} {{lastName}} {{ calc2}} {{ 9 * 9}}</div> -->
