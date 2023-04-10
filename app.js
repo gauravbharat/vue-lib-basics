@@ -17,11 +17,7 @@ const vm = createApp({
   },
   methods: {
     // use regular functions instead of arrow functions due to the Proxy mechanism of Vue for accessing instance data
-    fullName() {
-      return `${this.firstName} ${
-        this.middleName
-      } ${this.lastName.toUpperCase()}`;
-    },
+
     increment() {
       this.age++;
     },
@@ -31,6 +27,16 @@ const vm = createApp({
     },
     updateMiddleName(event) {
       this.middleName = event.target.value;
+    },
+  },
+  /** A method inside the methods object can get called multiple times for other method calls as well! Use computed property to keep the computations separate.
+   * Save on performance and execution time.
+   * Cannot pass parameters/arguments. */
+  computed: {
+    fullName() {
+      return `${this.firstName} ${
+        this.middleName
+      } ${this.lastName.toUpperCase()}`;
     },
   },
 }).mount("#vueApp");
