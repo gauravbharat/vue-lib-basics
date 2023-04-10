@@ -13,7 +13,7 @@ const vm = createApp({
   methods: {
     // use regular functions instead of arrow functions due to the Proxy mechanism of Vue for accessing instance data
     fullName() {
-      return `${this.firstName} ${this.lastName}`;
+      return `${this.firstName} ${this.lastName.toUpperCase()}`;
     },
   },
 }).mount("#vueApp");

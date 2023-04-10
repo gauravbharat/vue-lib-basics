@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VueJS Course</title>
+    <title>VueJS Basics</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
     <div id="vueApp" v-cloak>
-      {{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}
+      <p>{{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}</p>
+      <hr />
+
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" id="firstName" v-model="firstName" />
+
+      <label for="lastName">Last Name</label>
+      <input type="text" name="lastName" id="lastName" v-model="lastName" />
     </div>
 
     <!-- <div id="vueApp2">{{message2}} {{lastName}} {{ calc2}} {{ 9 * 9}}</div> -->
