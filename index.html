@@ -39,7 +39,7 @@
         name="lastName"
         id="lastName"
         :value="lastName"
-        @input="updateLastName('last name event triggered', $event)"
+        @input.prevent="updateLastName('last name event triggered', $event)"
       />
 
       <!-- v-on directive, listen to HTML events and execute expression or function -->
