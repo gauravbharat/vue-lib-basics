@@ -5,14 +5,21 @@ const vm = createApp({
   data() {
     return {
       message: "Hello Vue World!",
-      firstName: "Gary",
+      firstName: "John",
+      lastName: "Doe",
       calc: 5 + 4,
     };
+  },
+  methods: {
+    // use regular functions instead of arrow functions due to the Proxy mechanism of Vue for accessing instance data
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
   },
 }).mount("#vueApp");
 
 setTimeout(() => {
-  vm.firstName = "Gaurav";
+  vm.firstName = "Jane";
 }, 2000);
 
 // createApp({
