@@ -7,7 +7,9 @@
   <body>
     <!-- v-cloak directive waits for Vue application to mount itself into document. i.e. remains on the element until the associated Vue instance finishes compilation or is mounted. -->
     <div id="vueApp" v-cloak>
-      <p>{{message}} {{fullName()}} {{ calc}} {{ 3 * 3}}</p>
+      <p>{{message}}</p>
+      <p>{{fullName()}}</p>
+      <p>{{ calc}} {{ 3 * 3}}</p>
       <!-- v-bind directive, binds HTML attribute in view (html document) to a dynamic value in model (javascript). -->
       <p><a v-bind:href="url" target="_blank">Google - using v-bind</a></p>
       <!-- used shorthand for binding HTML attribute to a dynamic value -->
@@ -37,7 +39,7 @@
         name="lastName"
         id="lastName"
         :value="lastName"
-        @input="updateLastName"
+        @input="updateLastName('last name event triggered', $event)"
       />
 
       <!-- v-on directive, listen to HTML events and execute expression or function -->
