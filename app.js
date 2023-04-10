@@ -10,3 +10,13 @@ createApp({
     };
   },
 }).mount("#vueApp");
+
+createApp({
+  data() {
+    return {
+      message2: "Hello Vue Multiverse!",
+      lastName: "D 'souza",
+      calc2: 9 + 9,
+    };
+  },
+}).mount("#vueApp2");
