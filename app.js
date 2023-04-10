@@ -8,6 +8,8 @@ const vm = createApp({
       firstName: "John",
       lastName: "Doe",
       calc: 5 + 4,
+      url: "https://nextjs-google-clone-8cd664mk9-gauravbharat.vercel.app/",
+      blogUrl: "https://nextjs-blog-gauravbharat.vercel.app/",
     };
   },
   methods: {
