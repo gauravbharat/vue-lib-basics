@@ -1,7 +1,7 @@
 // Mount Vue application into document
 const { createApp } = Vue;
 
-createApp({
+const vm = createApp({
   data() {
     return {
       message: "Hello Vue World!",
@@ -11,12 +11,16 @@ createApp({
   },
 }).mount("#vueApp");
 
-createApp({
-  data() {
-    return {
-      message2: "Hello Vue Multiverse!",
-      lastName: "D 'souza",
-      calc2: 9 + 9,
-    };
-  },
-}).mount("#vueApp2");
+setTimeout(() => {
+  vm.firstName = "Gaurav";
+}, 2000);
+
+// createApp({
+//   data() {
+//     return {
+//       message2: "Hello Vue Multiverse!",
+//       lastName: "D 'souza",
+//       calc2: 9 + 9,
+//     };
+//   },
+// }).mount("#vueApp2");
